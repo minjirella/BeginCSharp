@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BaseBallCS;
 
 namespace BaseBall
 {
@@ -10,8 +11,9 @@ namespace BaseBall
     {
         //상수 정의 : const 로 변하지않는 숫자로 정의, 후에 최대치 변경이
         // 이루어지면 그때 해당값만 변경 해주면 된다.
-        const int MaxVal = 10;
-        const int Digit = 3;
+        //const int MaxVal = 10;
+        //const int Digit = 3;
+        private static object result;
 
         static void Main(string[] args)
         {
@@ -21,11 +23,11 @@ namespace BaseBall
             // 1 정답을 생성( 이는 중복이 되어서는 안된다. 0~9사이의 3개의 정수)
             int tryCount = 0;
             Random randNum = new Random();
-            int[] answers = new int[Digit];
-            int[] guesses = new int[Digit];
+            int[] answers = new int[Constant.Digit];
+            int[] guesses = new int[Constant.Digit];
             while (true)
             {// 지역변수 선언은 항상 그 중괄호 시작에서 끝까지만 유효하다.
-                for(int i=0; i<Digit; i++) answers[i] = randNum.Next(MaxVal);
+                for(int i=0; i< Constant.Digit; i++) answers[i] = randNum.Next(Constant.MaxValue);
 
                 // todo: 추후 수정
                 if (answers[0] != 0)
@@ -36,7 +38,7 @@ namespace BaseBall
             }
 
             Console.Write("정답 : ");
-            for (int i = 0; i < Digit; i++)
+            for (int i = 0; i < Constant.Digit; i++)
             {
                 Console.Write(answers[i]);
             }
@@ -53,7 +55,7 @@ namespace BaseBall
                     guesses[i] = Convert.ToInt32(Console.ReadLine());
                 }
                 Console.WriteLine("추측 : ");
-                for (int i = 0; i < Digit; i++)
+                for (int i = 0; i < Constant.Digit; i++)
                 {
                     Console.Write(guesses[i]);
                 }
@@ -61,27 +63,17 @@ namespace BaseBall
 
                 // 3 정답과 추측을 비교하여 결과를 계산
                 // 3-1 정답 숫자와 같을경우 Ball, 정답 숫자에 indexNum까지 맞을 경우 Strike, 아웃
-                int strike = 0;
-                int ball = 0;
-                int @out = 0;
+                Result result = new Result();
 
-                for (int i = 0; i < Digit; i++)
-                {
-                    int j = (i + 1) % Digit;
-                    int k = (i + 1) % Digit;
+                result.Cal(answers, guesses);
 
-                    if (answers[i] == guesses[i]) strike++;
-                    else if (answers[i] == guesses[j] || answers[i] == guesses[k]) ball++;
-                    else @out++;
-                }
-                
                 // 4 결과를 출력
-                Console.WriteLine($"결과 : S {strike}, B {ball}, O {@out}");
+                //Console.WriteLine($"결과 : S {strike}, B {ball}, O {@out}");
+                result.Print();
 
                 // 5 정답과 추측이 일치하지 않으면 2번으로 돌아간다.
                 // 5-1 정답의 조건 : 3 Strike
-
-                if (strike == Digit) break;
+                if (result.IsCorrect()) break;
             }
 
             // 정답을 맞추는데 걸리는 횟수를 출력. 종료.
