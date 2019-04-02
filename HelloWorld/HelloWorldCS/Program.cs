@@ -29,6 +29,9 @@ namespace HelloWorldCS
                 }
             }
             Console.WriteLine(sum);
+
+            // 한줄완성
+            sum = Enumerable.Range(1, 100).Where(x => x % 3 == 0).Sum();
         }
     }
 }
