@@ -32,20 +32,14 @@ namespace BaseBall
         }
 
 
-        static void Main(string[] args)
+        static int[] CreateAnswers()
         {
-            Console.WriteLine("Hello World");
-
-            //알고리즘 기술 단계
-            // 1 정답을 생성( 이는 중복이 되어서는 안된다. 0~9사이의 3개의 정수)
-            int tryCount = 0;
             Random randNum = new Random();
             int[] answers = new int[Constant.Digit];
-            int[] guesses = new int[Constant.Digit];
 
             while (true)
             {// 지역변수 선언은 항상 그 중괄호 시작에서 끝까지만 유효하다.
-                for(int i=0; i< Constant.Digit; i++) answers[i] = randNum.Next(Constant.MaxValue);
+                for (int i = 0; i < Constant.Digit; i++) answers[i] = randNum.Next(Constant.MaxValue);
 
                 // todo: 추후 수정
                 if (answers[0] != 0)
@@ -55,6 +49,30 @@ namespace BaseBall
                 }
             }
 
+            return answers;
+        }
+
+
+        static int[] InputGuesses()
+        {
+            int[] guesses = new int[Constant.Digit];
+            for (int i = 0; i < guesses.Length; i++) // property
+            {
+                guesses[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            return guesses;
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World");
+            int tryCount = 0;
+
+            //알고리즘 기술 단계
+            // 1 정답을 생성( 이는 중복이 되어서는 안된다. 0~9사이의 3개의 정수)
+            int[] answers = CreateAnswers();
             PrintNum("[정답] ", answers);
 
             // - while
@@ -63,10 +81,7 @@ namespace BaseBall
                 tryCount++;
                 // 2 추측 수를 호출 -> 입력받는다
                 // -> 두 가지로 형변환 하는 방법이있다 str->int
-                for (int i = 0; i < guesses.Length; i++) // property
-                {
-                    guesses[i] = Convert.ToInt32(Console.ReadLine());
-                }
+                int[] guesses = InputGuesses();                
                 PrintNum("[추측] ", guesses);
 
                 // 3 정답과 추측을 비교하여 결과를 계산
