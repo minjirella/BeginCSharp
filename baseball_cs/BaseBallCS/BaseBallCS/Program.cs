@@ -14,6 +14,24 @@ namespace BaseBall
         //const int MaxVal = 10;
         //const int Digit = 3;
 
+
+        /// <summary>
+        /// 숫자 배열을 출력한다.
+        /// </summary>
+        /// <param name="prefix">숫자 출력전에 출력할 문자열</param>
+        /// <param name="numbers">출력할 숫자</param>
+        static void PrintNum(string prefix, int[] numbers) //매개변수의 성질을 파악해서 명사로 정의하고
+            // 함수의 역할을 파악해서 동사로 명명하도록 하자.
+        {
+            Console.Write(prefix);
+            for (int i = 0; i < Constant.Digit; i++)
+            {
+                Console.Write(numbers[i]);
+            }
+            Console.WriteLine("");
+        }
+
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
@@ -24,6 +42,7 @@ namespace BaseBall
             Random randNum = new Random();
             int[] answers = new int[Constant.Digit];
             int[] guesses = new int[Constant.Digit];
+
             while (true)
             {// 지역변수 선언은 항상 그 중괄호 시작에서 끝까지만 유효하다.
                 for(int i=0; i< Constant.Digit; i++) answers[i] = randNum.Next(Constant.MaxValue);
@@ -36,12 +55,7 @@ namespace BaseBall
                 }
             }
 
-            Console.Write("정답 : ");
-            for (int i = 0; i < Constant.Digit; i++)
-            {
-                Console.Write(answers[i]);
-            }
-            Console.WriteLine("");
+            PrintNum("[정답] ", answers);
 
             // - while
             while (true)
@@ -53,12 +67,7 @@ namespace BaseBall
                 {
                     guesses[i] = Convert.ToInt32(Console.ReadLine());
                 }
-                Console.WriteLine("추측 : ");
-                for (int i = 0; i < Constant.Digit; i++)
-                {
-                    Console.Write(guesses[i]);
-                }
-                Console.WriteLine("");
+                PrintNum("[추측] ", guesses);
 
                 // 3 정답과 추측을 비교하여 결과를 계산
                 // 3-1 정답 숫자와 같을경우 Ball, 정답 숫자에 indexNum까지 맞을 경우 Strike, 아웃
