@@ -13,21 +13,33 @@ namespace BaseBall
         // 이루어지면 그때 해당값만 변경 해주면 된다.
         //const int MaxVal = 10;
         //const int Digit = 3;
-        private static object result;
 
-        static void Main(string[] args)
+
+        /// <summary>
+        /// 숫자 배열을 출력한다.
+        /// </summary>
+        /// <param name="prefix">숫자 출력전에 출력할 문자열</param>
+        /// <param name="numbers">출력할 숫자</param>
+        static void PrintNum(string prefix, int[] numbers) //매개변수의 성질을 파악해서 명사로 정의하고
+            // 함수의 역할을 파악해서 동사로 명명하도록 하자.
         {
-            Console.WriteLine("Hello World");
+            Console.Write(prefix);
+            for (int i = 0; i < Constant.Digit; i++)
+            {
+                Console.Write(numbers[i]);
+            }
+            Console.WriteLine("");
+        }
 
-            //알고리즘 기술 단계
-            // 1 정답을 생성( 이는 중복이 되어서는 안된다. 0~9사이의 3개의 정수)
-            int tryCount = 0;
+
+        static int[] CreateAnswers()
+        {
             Random randNum = new Random();
             int[] answers = new int[Constant.Digit];
-            int[] guesses = new int[Constant.Digit];
+
             while (true)
             {// 지역변수 선언은 항상 그 중괄호 시작에서 끝까지만 유효하다.
-                for(int i=0; i< Constant.Digit; i++) answers[i] = randNum.Next(Constant.MaxValue);
+                for (int i = 0; i < Constant.Digit; i++) answers[i] = randNum.Next(Constant.MaxValue);
 
                 // todo: 추후 수정
                 if (answers[0] != 0)
@@ -37,12 +49,31 @@ namespace BaseBall
                 }
             }
 
-            Console.Write("정답 : ");
-            for (int i = 0; i < Constant.Digit; i++)
+            return answers;
+        }
+
+
+        static int[] InputGuesses()
+        {
+            int[] guesses = new int[Constant.Digit];
+            for (int i = 0; i < guesses.Length; i++) // property
             {
-                Console.Write(answers[i]);
+                guesses[i] = Convert.ToInt32(Console.ReadLine());
             }
-            Console.WriteLine("");
+
+            return guesses;
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World");
+            int tryCount = 0;
+
+            //알고리즘 기술 단계
+            // 1 정답을 생성( 이는 중복이 되어서는 안된다. 0~9사이의 3개의 정수)
+            int[] answers = CreateAnswers();
+            PrintNum("[정답] ", answers);
 
             // - while
             while (true)
@@ -50,16 +81,8 @@ namespace BaseBall
                 tryCount++;
                 // 2 추측 수를 호출 -> 입력받는다
                 // -> 두 가지로 형변환 하는 방법이있다 str->int
-                for (int i = 0; i < guesses.Length; i++) // property
-                {
-                    guesses[i] = Convert.ToInt32(Console.ReadLine());
-                }
-                Console.WriteLine("추측 : ");
-                for (int i = 0; i < Constant.Digit; i++)
-                {
-                    Console.Write(guesses[i]);
-                }
-                Console.WriteLine("");
+                int[] guesses = InputGuesses();                
+                PrintNum("[추측] ", guesses);
 
                 // 3 정답과 추측을 비교하여 결과를 계산
                 // 3-1 정답 숫자와 같을경우 Ball, 정답 숫자에 indexNum까지 맞을 경우 Strike, 아웃
@@ -68,7 +91,6 @@ namespace BaseBall
                 result.Cal(answers, guesses);
 
                 // 4 결과를 출력
-                //Console.WriteLine($"결과 : S {strike}, B {ball}, O {@out}");
                 result.Print();
 
                 // 5 정답과 추측이 일치하지 않으면 2번으로 돌아간다.
