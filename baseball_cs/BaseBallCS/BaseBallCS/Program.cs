@@ -13,7 +13,6 @@ namespace BaseBall
         // 이루어지면 그때 해당값만 변경 해주면 된다.
         //const int MaxVal = 10;
         //const int Digit = 3;
-        private static object result;
 
         static void Main(string[] args)
         {
@@ -68,7 +67,6 @@ namespace BaseBall
                 result.Cal(answers, guesses);
 
                 // 4 결과를 출력
-                //Console.WriteLine($"결과 : S {strike}, B {ball}, O {@out}");
                 result.Print();
 
                 // 5 정답과 추측이 일치하지 않으면 2번으로 돌아간다.
