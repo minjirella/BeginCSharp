@@ -22,20 +22,16 @@ namespace BaseBallCS
             Console.WriteLine($"결과 : S {Strike}, B {Ball}, O {Out}");
         }
 
-        internal void Cal()
-        {
-            throw new NotImplementedException();
-        }
 
-        internal void Cal(int[] answers, int[] guesses)
+        internal void Cal(Answer answer, Guess guess)
         {
             for (int i = 0; i < Constant.Digit; i++)
             {
                 int j = (i + 1) % Constant.Digit;
-                int k = (i + 1) % Constant.Digit;
+                int k = (i + 2) % Constant.Digit;
             
-                if (answers[i] == guesses[i]) Strike++;
-                else if (answers[i] == guesses[j] || answers[i] == guesses[k]) Ball++;
+                if (answer.numbers[i] == guess.numbers[i]) Strike++;
+                else if (answer.numbers[i] == guess.numbers[j] || answer.numbers[i] == guess.numbers[k]) Ball++;
                 else Out++;
             }
         }
