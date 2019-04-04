@@ -32,27 +32,6 @@ namespace BaseBall
         }
 
 
-        static int[] CreateAnswers()
-        {
-            Random randNum = new Random();
-            int[] answers = new int[Constant.Digit];
-
-            while (true)
-            {// 지역변수 선언은 항상 그 중괄호 시작에서 끝까지만 유효하다.
-                for (int i = 0; i < Constant.Digit; i++) answers[i] = randNum.Next(Constant.MaxValue);
-
-                // todo: 추후 수정
-                if (answers[0] != 0)
-                {
-                    if (answers[0] != answers[1] && answers[0] != answers[2] && answers[1] != answers[2])
-                        break;
-                }
-            }
-
-            return answers;
-        }
-
-
         static int[] InputGuesses()
         {
             int[] guesses = new int[Constant.Digit];
@@ -72,8 +51,9 @@ namespace BaseBall
 
             //알고리즘 기술 단계
             // 1 정답을 생성( 이는 중복이 되어서는 안된다. 0~9사이의 3개의 정수)
-            int[] answers = CreateAnswers();
-            PrintNum("[정답] ", answers);
+            Answer answer = new Answer();
+            answer.Create();
+            answer.Print();
 
             // - while
             while (true)
@@ -81,14 +61,15 @@ namespace BaseBall
                 tryCount++;
                 // 2 추측 수를 호출 -> 입력받는다
                 // -> 두 가지로 형변환 하는 방법이있다 str->int
-                int[] guesses = InputGuesses();                
-                PrintNum("[추측] ", guesses);
+                                
+                Guess guess = new Guess();
+                guess.Input(); //int[] guesses = InputGuesses();
+                guess.Print();
 
                 // 3 정답과 추측을 비교하여 결과를 계산
                 // 3-1 정답 숫자와 같을경우 Ball, 정답 숫자에 indexNum까지 맞을 경우 Strike, 아웃
                 Result result = new Result();
-
-                result.Cal(answers, guesses);
+                result.Cal(answer, guess);
 
                 // 4 결과를 출력
                 result.Print();
