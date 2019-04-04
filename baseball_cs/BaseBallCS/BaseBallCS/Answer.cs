@@ -10,9 +10,17 @@ namespace BaseBallCS
 {
     class Answer
     {
-        public int[] numbers = new int[Constant.Digit];
 
 
+        private int[] numbers = new int[Constant.Digit];
+
+        public int At(int index)
+        {
+            return numbers[index];
+        }
+
+
+        
         public void Create()
         {
             Random randNum = new Random();

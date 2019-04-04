@@ -8,7 +8,12 @@ namespace BaseBallCS
 {
     class Guess
     {
-        public int[] numbers = new int[Constant.Digit];
+        private int[] numbers = new int[Constant.Digit];
+
+        public int At(int index)
+        {
+            return numbers[index];
+        }
 
 
         public void Input()
