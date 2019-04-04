@@ -22,10 +22,6 @@ namespace BaseBallCS
             Console.WriteLine($"결과 : S {Strike}, B {Ball}, O {Out}");
         }
 
-        internal void Cal()
-        {
-            throw new NotImplementedException();
-        }
 
         internal void Cal(int[] answers, int[] guesses)
         {
