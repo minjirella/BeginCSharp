@@ -6,16 +6,8 @@ using System.Threading.Tasks;
 
 namespace BaseBallCS
 {
-    class Guess
+    class Guess : NumberContainer //Guess는 NumberContainer의 자식으로 상속을 받는다.
     {
-        private int[] numbers = new int[Constant.Digit];
-
-        public int At(int index)
-        {
-            return numbers[index];
-        }
-
-
         public void Input()
         {
             int[] numbers = new int[Constant.Digit];
@@ -24,17 +16,5 @@ namespace BaseBallCS
                 numbers[i] = Convert.ToInt32(Console.ReadLine());
             }
         }
-
-
-        public void Print()
-        {
-            Console.Write("[추측] ");
-            for (int i = 0; i < Constant.Digit; i++)
-            {
-                Console.Write(numbers[i]);
-            }
-            Console.WriteLine();
-        }
-
     }
 }

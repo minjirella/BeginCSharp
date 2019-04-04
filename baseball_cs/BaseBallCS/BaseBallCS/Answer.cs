@@ -8,24 +8,11 @@ using BaseBallCS;
 
 namespace BaseBallCS
 {
-    class Answer
+    class Answer : NumberContainer //Answer는 NumberContainer의 자식으로 상속을 받는다.
     {
-
-
-        private int[] numbers = new int[Constant.Digit];
-
-        public int At(int index)
-        {
-            return numbers[index];
-        }
-
-
-        
         public void Create()
         {
             Random randNum = new Random();
-            int[] numbers = new int[Constant.Digit];
-
             while (true)
             {// 지역변수 선언은 항상 그 중괄호 시작에서 끝까지만 유효하다.
                 for (int i = 0; i < Constant.Digit; i++) numbers[i] = randNum.Next(Constant.MaxValue);
@@ -37,16 +24,6 @@ namespace BaseBallCS
                         break;
                 }
             }
-        }
-
-        public void Print()
-        {
-            Console.Write("[정답] ");
-            for (int i = 0; i < Constant.Digit; i++)
-            {
-                Console.Write(numbers[i]);
-            }
-            Console.WriteLine();
-        }
+        }        
     }
 }
