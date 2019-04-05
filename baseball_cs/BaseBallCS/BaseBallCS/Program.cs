@@ -14,36 +14,6 @@ namespace BaseBall
         //const int MaxVal = 10;
         //const int Digit = 3;
 
-
-        /// <summary>
-        /// 숫자 배열을 출력한다.
-        /// </summary>
-        /// <param name="prefix">숫자 출력전에 출력할 문자열</param>
-        /// <param name="numbers">출력할 숫자</param>
-        static void PrintNum(string prefix, int[] numbers) //매개변수의 성질을 파악해서 명사로 정의하고
-            // 함수의 역할을 파악해서 동사로 명명하도록 하자.
-        {
-            Console.Write(prefix);
-            for (int i = 0; i < Constant.Digit; i++)
-            {
-                Console.Write(numbers[i]);
-            }
-            Console.WriteLine("");
-        }
-
-
-        static int[] InputGuesses()
-        {
-            int[] guesses = new int[Constant.Digit];
-            for (int i = 0; i < guesses.Length; i++) // property
-            {
-                guesses[i] = Convert.ToInt32(Console.ReadLine());
-            }
-
-            return guesses;
-        }
-
-
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
