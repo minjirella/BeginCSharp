@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F6E5C5D4-672A-4E02-935C-2A652243821C}</ProjectGuid>
+    <ProjectGuid>{F99CF7E5-7D2C-45BD-99C8-0A5E923124D0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Pointer</RootNamespace>
-    <AssemblyName>Pointer</AssemblyName>
+    <RootNamespace>Hello2</RootNamespace>
+    <AssemblyName>Hello2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cat.cs" />
+    <Compile Include="Marine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Snake.cs" />
