@@ -36,11 +36,11 @@
             this.labelTotal = new System.Windows.Forms.Label();
             this.Total = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.trackBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AlbumTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trackIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.albumIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AlbumTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trackBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBindingSource)).BeginInit();
@@ -48,10 +48,9 @@
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(339, 39);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchBtn.Location = new System.Drawing.Point(297, 31);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(86, 29);
+            this.searchBtn.Size = new System.Drawing.Size(75, 23);
             this.searchBtn.TabIndex = 0;
             this.searchBtn.Text = "검색";
             this.searchBtn.UseVisualStyleBackColor = true;
@@ -60,18 +59,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(85, 44);
+            this.label1.Location = new System.Drawing.Point(74, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 24);
+            this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "구매번호 (숫자)";
             // 
             // textInvoiceId
             // 
-            this.textInvoiceId.Location = new System.Drawing.Point(218, 40);
-            this.textInvoiceId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textInvoiceId.Location = new System.Drawing.Point(191, 32);
             this.textInvoiceId.Name = "textInvoiceId";
-            this.textInvoiceId.Size = new System.Drawing.Size(114, 29);
+            this.textInvoiceId.Size = new System.Drawing.Size(100, 24);
             this.textInvoiceId.TabIndex = 2;
             // 
             // groupBox1
@@ -83,11 +81,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.searchBtn);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(5, 5);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(433, 575);
+            this.groupBox1.Size = new System.Drawing.Size(379, 460);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "구매번호를 입력하면 구매한 노래제목이 출력되어요";
@@ -95,20 +91,20 @@
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
-            this.labelTotal.Location = new System.Drawing.Point(365, 546);
-            this.labelTotal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.labelTotal.Location = new System.Drawing.Point(319, 437);
+            this.labelTotal.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(20, 24);
+            this.labelTotal.Size = new System.Drawing.Size(16, 18);
             this.labelTotal.TabIndex = 4;
             this.labelTotal.Text = "0";
             // 
             // Total
             // 
             this.Total.AutoSize = true;
-            this.Total.Location = new System.Drawing.Point(242, 546);
-            this.Total.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Total.Location = new System.Drawing.Point(212, 437);
+            this.Total.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(105, 24);
+            this.Total.Size = new System.Drawing.Size(89, 18);
             this.Total.TabIndex = 4;
             this.Total.Text = "총 구매 가격 :";
             // 
@@ -122,17 +118,18 @@
             this.albumIdDataGridViewTextBoxColumn,
             this.AlbumTitle});
             this.dataGridView1.DataSource = this.trackBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 76);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 61);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(419, 462);
+            this.dataGridView1.Size = new System.Drawing.Size(367, 370);
             this.dataGridView1.TabIndex = 3;
             // 
-            // trackBindingSource
+            // AlbumTitle
             // 
-            this.trackBindingSource.DataSource = typeof(Team.Data.Track);
+            this.AlbumTitle.DataPropertyName = "AlbumTitle";
+            this.AlbumTitle.HeaderText = "AlbumTitle";
+            this.AlbumTitle.Name = "AlbumTitle";
             // 
             // trackIdDataGridViewTextBoxColumn
             // 
@@ -152,24 +149,21 @@
             this.albumIdDataGridViewTextBoxColumn.HeaderText = "AlbumId";
             this.albumIdDataGridViewTextBoxColumn.Name = "albumIdDataGridViewTextBoxColumn";
             // 
-            // AlbumTitle
+            // trackBindingSource
             // 
-            this.AlbumTitle.DataPropertyName = "AlbumTitle";
-            this.AlbumTitle.HeaderText = "AlbumTitle";
-            this.AlbumTitle.Name = "AlbumTitle";
+            this.trackBindingSource.DataSource = typeof(Team.Data.Track);
             // 
             // Scenario3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(437, 572);
+            this.ClientSize = new System.Drawing.Size(384, 464);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximumSize = new System.Drawing.Size(455, 619);
-            this.MinimumSize = new System.Drawing.Size(455, 619);
+            this.MaximumSize = new System.Drawing.Size(400, 503);
+            this.MinimumSize = new System.Drawing.Size(400, 503);
             this.Name = "Scenario3";
-            this.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Text = "구매목록조회";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

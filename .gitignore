@@ -2,6 +2,7 @@
 # Created by https://www.gitignore.io/api/csharp,visualstudio
 # Edit at https://www.gitignore.io/?templates=csharp,visualstudio
 Shutta*/
+참고용소스/
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and

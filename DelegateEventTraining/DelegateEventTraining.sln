@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playlist", "PlaylistConsole\Playlist.csproj", "{EED07E8A-D82D-4AC1-96F5-645E064C2C1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaylistConsole", "Playlist\PlaylistConsole.csproj", "{8327AC75-43AD-4ABA-986E-43CF3F5A2922}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EED07E8A-D82D-4AC1-96F5-645E064C2C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED07E8A-D82D-4AC1-96F5-645E064C2C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED07E8A-D82D-4AC1-96F5-645E064C2C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED07E8A-D82D-4AC1-96F5-645E064C2C1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8327AC75-43AD-4ABA-986E-43CF3F5A2922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8327AC75-43AD-4ABA-986E-43CF3F5A2922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8327AC75-43AD-4ABA-986E-43CF3F5A2922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8327AC75-43AD-4ABA-986E-43CF3F5A2922}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {253F00D7-736E-406A-93C4-750619053247}
+	EndGlobalSection
+EndGlobal

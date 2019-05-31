@@ -16,7 +16,7 @@ namespace Team.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Scenario1_2());
+            Application.Run(new Scenario3());
         }
     }
 }

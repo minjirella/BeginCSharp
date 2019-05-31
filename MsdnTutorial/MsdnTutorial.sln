@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureViewer", "MsdnTutorial\PictureViewer.csproj", "{78EC1A9B-CD39-45B4-8B84-40DB0F8D3F7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathQuizJimin", "MathQuizJimin\MathQuizJimin.csproj", "{7224C7AF-71E1-4117-8896-75F68DC2931A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78EC1A9B-CD39-45B4-8B84-40DB0F8D3F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78EC1A9B-CD39-45B4-8B84-40DB0F8D3F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78EC1A9B-CD39-45B4-8B84-40DB0F8D3F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78EC1A9B-CD39-45B4-8B84-40DB0F8D3F7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7224C7AF-71E1-4117-8896-75F68DC2931A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7224C7AF-71E1-4117-8896-75F68DC2931A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7224C7AF-71E1-4117-8896-75F68DC2931A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7224C7AF-71E1-4117-8896-75F68DC2931A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAA22B93-DF84-41FE-8C53-975C2210E8A0}
+	EndGlobalSection
+EndGlobal
